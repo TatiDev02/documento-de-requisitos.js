@@ -1,0 +1,535 @@
+ 
+****# ## ## ## # # Documento de Especificação de Requisitos (SRS)****
+## Sistema de Gestão para Profissionais de Estética
+**Versão:** 1.0  
+**Plataforma:** Projeto Web Responsivo  
+
+========================================================================
+
+## 1. Introdução
+
+### 1.1. Objetivo do sistema
+O sistema tem como objetivo oferecer uma plataforma web para gerenciamento de serviços estéticos, permitindo que clientes realizem agendamentos, pagamentos, remarcações e avaliações, enquanto profissionais e administradores gerenciam a agenda, os clientes, os serviços, o estoque e as finanças do estabelecimento.
+
+O sistema deverá centralizar as operações do negócio em uma única plataforma, facilitando o gerenciamento dos atendimentos e melhorando a experiência das clientes.
+
+------------------------------------------------------------------------
+
+### 1.2. Escopo do sistema
+O sistema será composto por duas áreas principais:
+* **Área da cliente:** destinada às clientes que desejam consultar serviços, agendar atendimentos, realizar pagamentos e acompanhar seus agendamentos.
+* **Área administrativa:** destinada às profissionais e responsáveis pelo estabelecimento, permitindo gerenciar os atendimentos, clientes, serviços, estoque e informações financeiras.
+
+------------------------------
+***
+------------------------------------------
+
+### 1.3. Plataforma
+O sistema deverá atender aos seguintes critérios:
+* Ser acessível por meio de navegadores web.
+* Funcionar em computadores, tablets e celulares.
+* Possuir interface responsiva.
+* Permitir que clientes e funcionários acessem o sistema pela internet.
+* Utilizar autenticação para acesso às funcionalidades restritas.
+
+------------------------------------------------------------------------
+
+### 1.4. Usuários do sistema
+
+| Usuário | Descrição |
+| :--- | :--- |
+| **Cliente** | Pessoa que agenda e utiliza os serviços. |
+| **Profissional** | Pessoa responsável pela realização dos procedimentos. |
+| **Recepcionista** | Funcionário responsável pelo atendimento e gerenciamento da agenda. |
+| **Gerente** | Pessoa responsável pela gestão operacional. |
+| **Administradora** | Responsável pelo estabelecimento e pelas configurações gerais. |
+
+========================================================================
+
+## 2. Requisitos Funcionais (RF)
+
+Os requisitos funcionais descrevem o que o sistema deverá fazer de forma detalhada. Cada requisito recebe um identificador único para facilitar o desenvolvimento e os testes do sistema.
+
+### Módulo 1. Cadastro e Autenticação
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF001** | O sistema deverá permitir que uma cliente crie uma conta informando nome, telefone, e-mail e senha. |
+| **RF002** | O sistema deverá permitir que clientes e funcionários realizem login utilizando suas credenciais. |
+| **RF003** | O sistema deverá permitir que a cliente consulte e atualize seus dados cadastrais. |
+| **RF004** | O sistema deverá permitir a recuperação de senha. |
+| **RF005** | O sistema deverá permitir que a administradora cadastre funcionários e defina seus respectivos papéis. |
+| **RF006** | O sistema deverá permitir que o funcionário encerre sua sessão. |
+
+------------------------------------------------------------------------
+
+### Módulo 2. Catálogo de Serviços
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF007** | O sistema deverá exibir o catálogo de serviços disponíveis para agendamento. |
+| **RF008** | Cada serviço deverá apresentar nome, descrição, duração e preço. |
+| **RF009** | O sistema deverá permitir que a administradora cadastre, edite e desative serviços. |
+| **RF010** | O sistema deverá permitir associar profissionais aos serviços que realizam. |
+| **RF011** | O sistema deverá permitir configurar o tempo necessário para cada serviço. |
+| **RF012** | O sistema deverá permitir configurar o valor de cada serviço. |
+
+------------------------------------------------------------------------
+
+### Módulo 3. Agendamento
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF013** | O sistema deverá permitir que a cliente selecione um serviço. |
+| **RF014** | O sistema deverá permitir que a cliente selecione uma profissional, quando houver mais de uma disponível. |
+| **RF015** | O sistema deverá exibir as datas e os horários disponíveis para o serviço selecionado. |
+| **RF016** | O sistema deverá permitir que a cliente selecione uma data e um horário. |
+| **RF017** | O sistema deverá registrar o agendamento após a confirmação das condições necessárias. |
+| **RF018** | O sistema deverá impedir agendamentos conflitantes para uma mesma profissional. |
+| **RF019** | O sistema deverá permitir que a cliente consulte seus agendamentos futuros. |
+| **RF020** | O sistema deverá permitir que a profissional visualize os agendamentos registrados em sua agenda. |
+| **RF021** | O sistema deverá permitir que a profissional bloqueie horários indisponíveis. |
+| **RF022** | O sistema deverá permitir que a profissional registre a conclusão do atendimento. |
+| **RF023** | O sistema deverá permitir que a profissional registre o não comparecimento da cliente. |
+
+------------------------------------------------------------------------
+
+### Módulo 4. Remarcação e Cancelamento
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF024** | O sistema deverá permitir que a cliente solicite a remarcação de um agendamento. |
+| **RF025** | O sistema deverá permitir que a cliente cancele um agendamento. |
+| **RF026** | O sistema deverá validar a solicitação conforme a política de cancelamento do estabelecimento. |
+| **RF027** | O sistema deverá verificar a disponibilidade do novo horário antes de confirmar uma remarcação. |
+| **RF028** | O sistema deverá registrar a data, o horário e o motivo do cancelamento, quando informado. |
+| **RF029** | O sistema deverá permitir que a administradora configure as regras de cancelamento e remarcação. |
+
+------------------------------------------------------------------------
+
+### Módulo 5. Pagamentos
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF030** | O sistema deverá permitir que a cliente realize pagamentos online. |
+| **RF031** | O sistema deverá permitir pagamentos por Pix e cartão, conforme os meios disponibilizados pelo provedor de pagamento. |
+| **RF032** | O sistema deverá permitir que o estabelecimento configure o pagamento integral ou parcial por sinal. |
+| **RF033** | O sistema deverá registrar o valor total do serviço. |
+| **RF034** | O sistema deverá registrar o valor pago e o valor pendente. |
+| **RF035** | O sistema deverá registrar a forma de pagamento, a data e a situação da transação. |
+| **RF036** | O sistema deverá atualizar a situação do pagamento conforme a confirmação do provedor. |
+| **RF037** | O sistema deverá permitir que a administradora consulte os pagamentos. |
+| **RF038** | O sistema deverá permitir que a administradora solicite ou registre reembolsos conforme as funcionalidades do provedor. |
+
+========================================================================
+
+------------------------------------------------------------------------
+
+### Módulo 6. Avaliações
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF039** | O sistema deverá permitir que a cliente avalie um atendimento concluído. |
+| **RF040** | A avaliação deverá permitir nota de 1 a 5 estrelas. |
+| **RF041** | O sistema deverá permitir o registro de comentários e sugestões. |
+| **RF042** | O sistema deverá permitir que a cliente consulte suas avaliações anteriores. |
+| **RF043** | O sistema deverá calcular a média das avaliações de cada profissional. |
+| **RF044** | O sistema deverá permitir que a administradora consulte as avaliações recebidas. |
+
+------------------------------------------------------------------------
+
+###  Módulo 7. Ficha de Avaliação Prévia
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF045** | O sistema deverá permitir o cadastro de formulários de avaliação prévia. |
+| **RF046** | O sistema deverá permitir associar formulários específicos a determinados serviços. |
+| **RF047** | O sistema deverá permitir que a cliente preencha a ficha antes do atendimento. |
+| **RF048** | O sistema deverá permitir que a profissional consulte as fichas das clientes atendidas por ela. |
+| **RF049** | O sistema deverá permitir registrar o consentimento informado, quando aplicável. |
+| **RF050** | O sistema deverá armazenar o histórico das fichas preenchidas. |
+
+------------------------------------------------------------------------
+
+### Módulo 8. Gestão de Clientes
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF051** | O sistema deverá permitir que funcionários autorizados consultem o cadastro de clientes. |
+| **RF052** | O sistema deverá exibir o histórico de atendimentos de cada cliente. |
+| **RF053** | O sistema deverá exibir o histórico de pagamentos. |
+| **RF054** | O sistema deverá exibir agendamentos anteriores e futuros. |
+| **RF055** | O sistema deverá permitir registrar observações profissionais pertinentes ao atendimento. |
+| **RF056** | O sistema deverá permitir pesquisar clientes por nome, telefone ou e-mail. |
+
+------------------------------------------------------------------------
+
+### Módulo 9. Gestão de Agenda
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF057** | O sistema deverá exibir a agenda em visualização diária, semanal e mensal. |
+| **RF058** | O sistema deverá permitir consultar agendamentos confirmados, cancelados e concluídos. |
+| **RF059** | O sistema deverá permitir bloquear horários da agenda. |
+| **RF060** | O sistema deverá permitir que funcionários autorizados criem agendamentos manualmente. |
+| **RF061** | O sistema deverá permitir que funcionários autorizados alterem agendamentos. |
+| **RF062** | O sistema deverá permitir filtrar a agenda por profissional. |
+
+------------------------------------------------------------------------
+
+### Módulo 10. Gestão de Estoque
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF063** | O sistema deverá permitir cadastrar materiais e produtos utilizados nos procedimentos. |
+| **RF064** | O sistema deverá registrar a quantidade disponível de cada material. |
+| **RF065** | O sistema deverá registrar entradas e saídas de materiais. |
+| **RF066** | O sistema deverá permitir configurar o estoque mínimo de cada material. |
+| **RF067** | O sistema deverá emitir alertas quando o estoque atingir o limite mínimo. |
+| **RF068** | O sistema deverá permitir registrar datas de validade. |
+| **RF069** | O sistema deverá permitir consultar o histórico de movimentações. |
+| **RF070** | O sistema deverá permitir associar materiais aos serviços realizados. |
+| **RF071** | O sistema poderá realizar baixa automática dos materiais utilizados após a conclusão do atendimento. |
+
+========================================================================
+
+------------------------------------------------------------------------
+
+###  Módulo 11. Gestão Financeira
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF072** | O sistema deverá apresentar o faturamento diário, semanal e mensal. |
+| **RF073** | O sistema deverá permitir consultar pagamentos pendentes. |
+| **RF074** | O sistema deverá apresentar cancelamentos e reembolsos. |
+| **RF075** | O sistema deverá permitir registrar despesas. |
+| **RF076** | O sistema deverá permitir cadastrar regras de comissão por profissional. |
+| **RF077** | O sistema deverá calcular as comissões conforme as regras configuradas. |
+| **RF078** | O sistema deverá permitir consultar os serviços mais vendidos. |
+| **RF079** | O sistema deverá gerar relatórios financeiros. |
+| **RF080** | O sistema deverá permitir filtrar os relatórios por período e profissional. |
+
+------------------------------------------------------------------------
+
+###  Módulo 12. Notificações
+
+| ID | Requisito |
+| :--- | :--- |
+| **RF081** | O sistema deverá enviar confirmação de agendamento. |
+| **RF082** | O sistema deverá enviar notificações de remarcação e cancelamento. |
+| **RF083** | O sistema deverá enviar lembretes de atendimento. |
+| **RF084** | O sistema deverá notificar a cliente sobre alterações relevantes. |
+| **RF085** | O sistema poderá notificar clientes da lista de espera quando surgir um horário disponível. |
+
+========================================================================
+
+## 3. Requisitos Não-Funcionais (RNF)
+
+Os requisitos não-funcionais descrevem as premissas de qualidade do sistema, incluindo aspectos de segurança, desempenho, usabilidade e confiabilidade.
+
+| ID | Requisito |
+| :--- | :--- |
+| **RNF001** | O sistema deverá possuir interface responsiva, adaptando-se a computadores, tablets e celulares. |
+| **RNF002** | O sistema deverá funcionar nos principais navegadores modernos. |
+| **RNF003** | O sistema deverá proteger o acesso por autenticação. |
+| **RNF004** | O sistema deverá restringir o acesso às informações conforme o papel do usuário. |
+| **RNF005** | O sistema deverá utilizar conexão segura HTTPS. |
+| **RNF006** | O sistema deverá proteger senhas utilizando mecanismos seguros de hash. |
+| **RNF007** | O sistema deverá realizar backups periódicos dos dados. |
+| **RNF008** | O sistema deverá proteger dados pessoais e sensíveis conforme a LGPD. |
+| **RNF009** | O sistema deverá apresentar mensagens claras em caso de erro. |
+| **RNF010** | O sistema deverá manter consistência nos dados de agendamento e pagamento. |
+| **RNF011** | O sistema deverá registrar operações importantes para fins de auditoria. |
+| **RNF012** | O sistema deverá permitir manutenção e evolução de suas funcionalidades. |
+
+------------------------------------------------------------------------
+
+###  Requisitos Específicos de Segurança e Privacidade
+
+Como o sistema armazenará informações pessoais e fichas com dados de saúde, os seguintes critérios devem ser estritamente seguidos:
+
+* **Coleta Seletiva:** Coletar somente os dados necessários para a finalidade do atendimento.
+* **Acesso Restrito às Fichas:** Restringir o acesso às fichas de avaliação prévia apenas a profissionais autorizados.
+* **Isolamento de Clientes:** Evitar que clientes consultem informações de outras clientes.
+* **Isolamento Financeiro:** Evitar que profissionais consultem informações financeiras gerais do estabelecimento sem autorização.
+* **Retificação de Dados:** Permitir que as informações cadastrais e pessoais sejam corrigidas pelos titulares quando necessário.
+* **Ciclo de Vida do Dado:** Implementar políticas claras de retenção e descarte seguro de dados antigos ou inativos.
+* **Bases Legais e Consentimento:** Registrar consentimentos e outras bases legais aplicáveis a cada tipo de tratamento de dados. 
+  *(Atenção: o consentimento não é automaticamente a base legal adequada para todo tratamento; ela deve ser definida conforme a finalidade e o contexto de cada operação).*
+* **Proteção de Tráfego e Armazenamento:** Proteger ativamente todas as informações armazenadas no banco de dados e transmitidas na rede.
+
+========================================================================
+
+========================================================================
+
+## 4. Regras de Negócio (RN)
+
+As regras de negócio determinam as condições lógicas operacionais que devem ser estritamente respeitadas durante a utilização do sistema.
+
+| ID | Regra |
+| :--- | :--- |
+| **RN001** | Uma profissional não poderá possuir dois atendimentos conflitantes no mesmo período. |
+| **RN002** | A duração do serviço deverá ser considerada no cálculo dos horários disponíveis. |
+| **RN003** | Um agendamento deverá estar associado a uma cliente, um serviço, uma profissional e uma data e horário. |
+| **RN004** | Um agendamento só poderá ser confirmado após a validação da disponibilidade. |
+| **RN005** | Quando houver pagamento de sinal obrigatório, o agendamento deverá seguir a política de confirmação configurada. |
+| **RN006** | A cliente poderá remarcar ou cancelar conforme as regras definidas pelo estabelecimento. |
+| **RN007** | O sistema deverá registrar o valor contratado no momento do agendamento, para evitar que alterações posteriores no catálogo modifiquem indevidamente agendamentos existentes. |
+| **RN008** | A avaliação só poderá ser realizada para um atendimento concluído. |
+| **RN009** | A baixa automática de estoque deverá ocorrer somente após a conclusão do atendimento, quando essa funcionalidade estiver habilitada. |
+| **RN010** | A comissão deverá ser calculada conforme a regra cadastrada para a profissional e o serviço. |
+| **RN011** | O acesso às fichas de avaliação prévia deverá ser limitado aos usuários autorizados. |
+| **RN012** | Um pagamento não deverá ser considerado aprovado sem confirmação válida do provedor de pagamento. |
+
+------------------------------------------------------------------------
+
+###  Regras Importantes Pendentes de Definição
+
+Estas decisões de negócio influenciam diretamente a lógica do código e precisam ser validadas pela gerência:
+* **Política de Sinal:** O sinal será obrigatório para todos os serviços ou apenas para alguns específicos?
+* **Prazos:** Qual será o tempo de antecedência máxima para permitir um cancelamento/remarcação sem prejuízos?
+* **Cancelamento Tardio:** Haverá cobrança de taxa ou retenção do sinal por cancelamento tardio?
+* **Políticas de Reembolso:** O estorno financeiro será feito de forma automatizada pelo provedor ou dependerá de aprovação manual interna?
+* **Fluxo de Autenticação:** A cliente poderá agendar horários de forma "visitante" (sem criar uma conta de acesso prévia)?
+* **Flexibilidade de Preços:** A profissional responsável pelo atendimento poderá alterar manualmente o preço final de um serviço na hora da conclusão?
+* **Base de Cálculo:** As comissões da equipe serão calculadas sobre o valor bruto do serviço, valor líquido recebido ou valor descontando os insumos do estoque?
+
+========================================================================
+
+## 5. Organização do Sistema em Módulos
+
+De acordo com o mapeamento arquitetural do projeto, o sistema divide-se em camadas funcionais interdependentes, separando o escopo de navegação dos usuários, as lógicas centrais e a camada de persistência:
+
+###  Área da Cliente (Frontend da Usuária)
+Camada voltada para o autoatendimento e navegação externa do público-alvo:
+* Gestão e atualização de perfil cadastral.
+* Consulta e filtragem ao catálogo de serviços estéticos.
+* Fluxo de agendamentos e seleção de horários vagos.
+* Checkout e efetivação de pagamentos online.
+* Acesso ao histórico de sessões anteriores e agendamentos futuros.
+* Envio de avaliações, notas e comentários pós-atendimento.
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+###  Matriz de Responsabilidade dos Módulos
+
+A tabela abaixo consolida o papel técnico e operacional de cada componente do ecossistema do sistema:
+
+| Módulo | Responsabilidade |
+| :--- | :--- |
+| **Autenticação** | Cadastro, login, recuperação de senha e controle de acesso (RBAC). |
+| **Clientes** | Cadastro de perfis, prontuários e histórico de consumo de clientes. |
+| **Serviços** | Catálogo de procedimentos, preços, tempos de duração e profissionais aptos. |
+| **Agendamentos** | Validação de disponibilidade, criação, remarcação e cancelamento de reservas. |
+| **Pagamentos** | Processamento de cobranças, transações em gateway, gestão de sinais e reembolsos. |
+| **Avaliações** | Coleta de notas (1 a 5 estrelas), comentários de feedback e cálculo de médias. |
+| **Fichas** | Disponibilização de formulários de anamnese prévia e termos de consentimento. |
+| **Agenda** | Visualização consolidada (dia/semana/mês) e gerenciamento interno de horários. |
+| **Estoque** | Ficha técnica de produtos, entradas, saídas e disparos de alertas de nível mínimo. |
+| **Financeiro** | Fluxo de caixa (receitas e despesas), cálculo de comissões e relatórios gerenciais. |
+| **Notificações** | Disparos de lembretes (e-mail, WhatsApp ou SMS) e avisos automáticos de alterações. |
+| **Administração** | Gerenciamento global de usuários da equipe, níveis de permissão e parâmetros do app. |
+
+------------------------------------------------------------------------
+
+###  Fluxo de Comunicação Intermodular
+
+Para evitar o acoplamento excessivo e impedir que o sistema se torne um monólito complexo, os módulos conversam entre si por meio de eventos ou requisições internas (APIs). 
+
+**Exemplo prático do ciclo de vida de um agendamento:**
+1. A cliente acessa a interface e escolhe um procedimento estético desejado.
+2. O módulo de **Serviços** é consultado para retornar o preço vigente e o tempo estimado de duração.
+3. O módulo de **Agendamentos** cruza a duração do serviço com a agenda da profissional para filtrar e expor os horários vagos.
+4. O módulo de **Pagamentos** entra em ação para processar o valor do sinal ou pagamento integral exigido em tela.
+5. Após o retorno positivo do gateway, o módulo de **Agendamentos** consolida a reserva e bloqueia em definitivo a agenda.
+6. O módulo de **Notificações** dispara automaticamente uma mensagem de confirmação para a cliente e para a profissional.
+7. Concluído o atendimento na clínica, o módulo de **Avaliações** dispara um gatilho liberando o formulário de feedback à usuária.
+8. O módulo **Financeiro** atualiza o painel de faturamento e adiciona o cálculo de comissão na carteira da profissional.
+
+========================================================================
+
+## 6. Casos de Uso (UC)
+
+Os casos de uso descrevem detalhadamente o passo a passo de como os diferentes atores interagem com a aplicação para realizar um objetivo de negócio.
+
+### Caso de Uso UC001: Agendar um Serviço
+
+* **Ator Principal:** Cliente
+* **Pré-condições:**
+  1. O serviço pretendido deve estar ativamente cadastrado no catálogo do estabelecimento.
+  2. A profissional desejada deve estar associada e habilitada para realizar o procedimento escolhido.
+
+####  Fluxo Principal
+1. A cliente acessa o catálogo público de serviços da plataforma.
+2. A cliente seleciona o serviço estético que deseja realizar.
+3. A cliente seleciona a profissional de sua preferência (caso haja mais de uma opção associada).
+4. A cliente escolhe uma data de sua preferência no calendário exibido.
+5. O sistema processa os dados e apresenta apenas os horários livres compatíveis com a duração do procedimento.
+6. A cliente clica sobre o horário de sua escolha.
+7. O sistema gera uma tela resumo solicitando a confirmação final dos dados da reserva.
+8. A cliente realiza o pagamento online do sinal (ou do valor integral), caso a política do serviço exija.
+9. O sistema recebe a validação, grava a reserva no banco de dados e confirma o agendamento em tela.
+10. A cliente recebe um comprovante com os dados da reserva via canal de notificação ativo.
+
+####  Fluxos Alternativos e de Exceção
+* **FA01 - Horário Selecionado Ocupado Concorrentemente:** Se entre o passo 6 e 8 outra pessoa concluir um agendamento no exato mesmo horário e profissional, o sistema deverá abortar a transação, notificar a cliente com um aviso claro de "Horário indisponível" e recarregar a tela do passo 5 expondo novas alternativas de horários disponíveis.
+
+####  Pós-condição
+* O agendamento estará registrado com status "Confirmado" e o horário ficará bloqueado na agenda do estabelecimento, tornando-se consultável de forma imediata tanto na área logada da cliente quanto no painel da profissional.
+
+========================================================================
+
+
+###  Área Administrativa (Painel de Gestão)
+Interface interna restrita às colaboradoras e alta gerência para controle do estabelecimento:
+* Monitoramento e controle da agenda de atendimentos.
+* Gestão do cadastro geral de clientes e fichas cadastrais.
+* Cadastro, edição, desativação de procedimentos e configuração da equipe.
+* Controle de insumos, movimentações, validades e limites de estoque.
+* Painel financeiro (faturamento, despesas, repasse e comissões profissionais).
+* Gestão de recursos humanos e atribuição de níveis de permissão da equipe.
+
+------------------------------------------------------------------------
+
+###  Módulos Compartilhados (Regras de Core / APIs)
+Serviços transversais que servem de ponte estrutural entre as duas pontas da aplicação:
+* **Autenticação:** Mecanismos de login seguro, validação de tokens, controle de acessos (RBAC) e recuperação de contas.
+* **Agendamentos:** Motor de busca por janelas de horários e regras para evitar concorrência de agendamentos.
+* **Pagamentos:** Integração direta com gateways e webhooks para processamento e conciliação de Pix e cartões.
+* **Notificações:** Rotinas automatizadas para disparo de alertas, confirmações e lembretes de visitas.
+
+------------------------------------------------------------------------
+
+###  Banco de Dados (Persistência)
+Camada de persistência relacional responsável por estruturar os dados com integridade:
+* **Clientes / Funcionários:** Perfis, dados de contato e níveis de permissão.
+* **Serviços:** Catálogos, durações médias, precificações e vínculos.
+* **Agendamentos:** Registro cronológico de sessões, profissionais escaladas e status da reserva.
+* **Pagamentos:** Transações, parcelas, dados de transação de gateway e registros de reembolso.
+* **Estoque:** Quantitativos de materiais, alertas de nível mínimo e lotes de validade.
+
+========================================================================
+###  Caso de Uso UC002: Remarcar um Serviço
+
+* **Ator Principal:** Cliente
+* **Pré-condições:**
+  1. A cliente deve estar devidamente autenticada no sistema.
+  2. A cliente deve possuir ao menos um agendamento futuro ativo no sistema.
+
+####  Fluxo Principal
+1. A cliente acessa o painel logado e navega até a seção "Meus Agendamentos".
+2. A cliente localiza e seleciona o agendamento específico que deseja remarcar.
+3. O sistema varre as regras de negócio para validar se a janela de tempo atual respeita a política de prazos de alteração do estabelecimento.
+4. A cliente escolhe uma nova data no calendário disponível.
+5. O sistema processa os horários livres da profissional e apresenta as opções válidas.
+6. A cliente escolhe o novo horário pretendido.
+7. O sistema verifica em tempo real se o bloco de tempo continua disponível e valida o novo agendamento.
+8. A alteração e a transferência de horário são salvas com sucesso no banco de dados.
+9. O sistema renderiza uma mensagem de sucesso na tela para a cliente.
+10. O módulo de notificações dispara um alerta de relesgamento tanto para a cliente quanto para a profissional escalada.
+
+####  Fluxos Alternativos e de Exceção
+* **FA01 - Violação da Política de Tempo:** Se a cliente tentar remarcar o serviço fora do prazo limite estabelecido pelas regras do negócio, o sistema deve bloquear a operação, exibir um aviso contendo os termos e contatos do estabelecimento para resolução manual e reter o status original do agendamento.
+
+####  Pós-condição
+* O agendamento original é liberado na agenda, o novo horário é bloqueado em definitivo e o histórico da transação é atualizado com o novo cronograma.
+
+------------------------------------------------------------------------
+
+###  Caso de Uso UC003: Gerenciar Estoque
+
+* **Ator Principal:** Funcionária Autorizada (Recepcionista, Gerente ou Administradora)
+* **Pré-condições:**
+  1. O usuário operador deve possuir nível de privilégio adequado para manipulação de estoque.
+  2. O material ou insumo a ser movimentado deve estar previamente cadastrado.
+
+####  Fluxo Principal
+1. A funcionária realiza a autenticação e acessa o módulo de Controle de Estoque.
+2. A funcionária pesquisa e seleciona o material ou produto desejado na listagem.
+3. A funcionária escolhe o tipo de operação desejada: "Registrar Entrada" ou "Registrar Saída".
+4. A funcionária digita a quantidade transacionada e, opcionalmente, o motivo ou lote/validade.
+5. O sistema processa a operação aritmética e atualiza o saldo da quantidade disponível no banco de dados.
+6. O sistema executa uma rotina automática de validação comparando o novo saldo contra o estoque mínimo definido para o item.
+7. O sistema exibe um aviso em tela confirmando o sucesso da gravação física da movimentação.
+
+####  Fluxos Alternativos e de Exceção
+* **FA01 - Alerta de Limite Mínimo Atingido:** Caso a verificação do passo 6 aponte que o saldo atual ficou igual ou inferior ao estoque mínimo configurado, o sistema executa o passo 7 normalmente, porém gera um indicador visual persistente de alerta (bandeira de atenção ou tag de reabastecimento urgente) na ficha do produto.
+
+####  Pós-condição
+* A movimentação de estoque é imutavelmente adicionada ao histórico de auditoria e a quantidade total atualizada passa a refletir em todas as consultas administrativas do sistema.
+
+========================================================================
+
+## 7. Critérios de Aceitação (CA)
+
+Os critérios de aceitação estipulam as premissas objetivas para homologar se as funcionalidades construídas estão operando exatamente conforme o esperado pelo negócio.
+
+| Funcionalidade | Critério de Aceitação Técnico |
+| :--- | :--- |
+| **Cadastro** | A cliente consegue criar uma conta fornecendo dados válidos e strings não vazias. |
+| **Login** | O sistema permite acesso com credenciais válidas e rejeita de forma segura tentativas com dados inválidos. |
+| **Agendamento** | A cliente consegue visualizar e selecionar blocos de horários verdadeiramente disponíveis. |
+| **Conflito de Horários** | O sistema impede que dois fluxos concorrentes confirmem horários sobrepostos com a mesma profissional. |
+| **Pagamento** | O sistema registra de forma fidedigna a situação exata da transação informada pelo gateway de pagamento. |
+| **Remarcação** | O sistema barra ou aprova a troca de data de acordo com a disponibilidade de agenda e a política de prazos. |
+| **Avaliação** | A cliente consegue submeter dados de avaliação unicamente para atendimentos com status "Concluído". |
+| **Estoque** | O sistema atualiza os valores aritméticos de saldo em tempo real após a conclusão de uma movimentação. |
+| **Permissões** | O sistema emite erro de acesso (HTTP 403) caso um funcionário tente invocar telas além do seu papel (RBAC). |
+| **Responsividade** | Toda a jornada crítica de agendamento pode ser operada de forma fluida em navegadores de smartphones. |
+
+------------------------------------------------------------------------
+
+###  Critérios de Aceitação em Formato de Engenharia (BDD)
+
+#### Cenário 01: Prevenção de Conflito de Agendamentos na Agenda
+* **Dado que** a profissional "Ana Clara" possui um atendimento agendado e confirmado no intervalo das 10h00 às 11h00;
+* **Quando** uma cliente tentar selecionar e confirmar um procedimento para a mesma profissional "Ana Clara" das 10h30 às 11h30;
+* **Então** o sistema deverá bloquear a confirmação do segundo agendamento, exibir uma mensagem alertando sobre o conflito e sugerir o próximo horário livre na grade da profissional.
+
+========================================================================
+
+## 8. Priorização das Funcionalidades e Roadmap
+
+Para viabilizar uma entrega de valor ágil e sustentável, mitigando o risco de hipertrofia de escopo antes do lançamento comercial, o projeto foi segmentado em três grandes fases evolucionárias:
+
+###  Fase 1: Mínimo Produto Viável (MVP)
+Foco centralizado em colocar a engrenagem principal de agendamentos e faturamento para funcionar o mais rápido possível no ambiente real.
+
+* **Cadastro e Login:** Sistema de autenticação seguro para os clientes e equipe técnica.
+* **Cadastro de Serviços:** Módulo básico de gerenciamento de procedimentos, preços e tempos de execução.
+* **Cadastro de Profissionais:** Vínculo de funcionárias e seus horários base de trabalho.
+* **Agenda:** Visualização e controle operacional da grade de horários da clínica.
+* **Agendamento pela Cliente:** Interface pública intuitiva para captação automática de reservas online.
+* **Cancelamento e Remarcação:** Automação básica de controle e liberação de horários vagos.
+* **Pagamento Online:** Integração com gateway para recebimento (Pix/Cartão) e controle de sinais de reserva.
+* **Gestão Básica de Clientes:** Ficha simples de cadastro e histórico básico de visitas.
+* **Notificações de Confirmação:** Disparos automáticos transacionais para validação de reservas.
+* **Controle de Permissões:** Separação primária de acessos entre a área cliente e a administrativa (RBAC).
+
+------------------------------------------------------------------------
+
+###  Fase 2: Expansão Operacional e Administrativa
+Foco voltado ao aprimoramento da gestão de retaguarda, fidelização e ferramentas de controle interno.
+
+* **Módulo de Avaliações:** Retorno de feedback com estrelas e comentários para melhoria dos serviços.
+* **Fichas de Avaliação Prévia:** Prontuários e fichas de anamnese digitalizadas integradas aos serviços.
+* **Gestão de Estoque:** Controle de movimentação e alertas inteligentes de insumos mínimos.
+* **Relatórios Financeiros:** Dashboards básicos de faturamento líquido, bruto e fluxo de caixa.
+* **Controle de Comissões:** Cálculo automático do repasse de valores para cada profissional da equipe.
+* **Módulo de Despesas:** Lançamento de custos operacionais fixos e variáveis para cálculo real de lucro.
+
+------------------------------------------------------------------------
+
+###  Fase 3: Inteligência de Negócio e Escalar
+Foco em marketing avançado, retenção massiva de clientes e expansão para estruturas complexas.
+
+* **Lista de Espera Inteligente:** Notificação automatizada para clientes em fila quando houver desistências.
+* **Motor de Promoções:** Criação e validação de cupons de descontos sazonais e por indicação.
+* **Programa de Fidelidade:** Acúmulo de pontos convertidos em vantagens ou serviços gratuitos.
+* **Pacotes e Assinaturas:** Venda integrada de recorrência ou combos de procedimentos estéticos.
+* **Gestão de Múltiplas Unidades (Multi-tenant):** Centralização administrativa para redes de franquias ou clínicas filiais.
+* **Analytics Avançado:** Dashboards contendo taxas de ocupação, CAC, LTV e indicadores de clientes recorrentes.
+
+========================================================================
